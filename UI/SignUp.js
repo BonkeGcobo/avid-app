@@ -12,7 +12,8 @@ import {
 
 import { Link } from "@react-navigation/native";
 
-function Login() {
+
+function SignUp() {
   const [email, onEmail] = React.useState("");
   const [password, onPassword] = React.useState("");
 
@@ -22,7 +23,7 @@ function Login() {
         <Image source={require("../assets/AvidAssets/ImagePeg.jpg")} />
 
         <View style={LoginSection.loginContainer}>
-          <Text style={{ fontWeight: "bold" }}>Login to your Account</Text>
+          <Text style={{ fontWeight: "bold" }}>Create your Account</Text>
 
           <View>
             <TextInput
@@ -31,6 +32,8 @@ function Login() {
               value={email}
             ></TextInput>
             <TextInput style={styles.input}></TextInput>
+            <TextInput style={styles.input}></TextInput>
+
           </View>
 
           <View style={btnSection}>
@@ -41,29 +44,28 @@ function Login() {
                 padding: 5,
                 borderRadius: 15,
                 width: 80,
+                alignSelf:"start"
               }}
             >
               <Text style={{ color: "#fff", textAlign: "center" }}>
-                Sign in
+                Sign Up
               </Text>
             </Pressable>
 
-            <Link style={{ color: "#C8A800", fontStyle: "italic" }} to="/">
-              Forgot Password
-            </Link>
+            
           </View>
 
           <View style={{ flexDirection: "row", marginTop: 25, gap: 5 }}>
             <Text>Don't have an account?</Text>
             <Link
-              to={{ screen: "SignUp" }}
+              to={{ screen: "Login" }}
               style={{
                 color: "#C8A800",
                 fontStyle: "italic",
                 fontWeight: "bold",
               }}
             >
-              Sign Up
+              Sign in
             </Link>
           </View>
         </View>
@@ -72,7 +74,7 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignUp;
 
 const styles = StyleSheet.create({
   container: {
